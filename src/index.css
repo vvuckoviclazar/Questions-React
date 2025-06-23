@@ -1,13 +1,62 @@
-body {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 6.25%;
+}
+
+body {
+  background-color: #ccf9fe;
+  font-family: sans-serif;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 100rem auto;
+  background-color: white;
+  color: rgb(0, 34, 62);
+  width: 800rem;
+  padding: 30rem;
+  border-radius: 5rem;
+  box-shadow: 4rem 4rem 6rem rgba(0, 0, 0, 0.25);
+}
+
+.questions-list {
+  list-style-type: none;
+  padding-left: 0rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.question-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 55rem;
+  font-weight: 500;
+  margin-bottom: 40rem;
+}
+
+h4 {
+  font-size: 25rem;
+  font-weight: 500;
+}
+
+li {
+  border: 1rem solid rgb(0, 34, 62);
+  width: 100%;
+  margin-bottom: 30rem;
+  padding: 10rem 20rem 10rem 20rem;
 }
