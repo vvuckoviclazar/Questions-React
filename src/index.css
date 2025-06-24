@@ -79,8 +79,9 @@ li {
 }
 
 p {
-  font-size: 15rem;
+  font-size: 16rem;
   padding-top: 15rem;
   padding-bottom: 10rem;
   color: rgb(151, 151, 151);
+  line-height: 25rem;
 }
