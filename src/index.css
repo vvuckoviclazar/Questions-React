@@ -21,7 +21,7 @@ body {
   flex-direction: column;
   margin: 100rem auto;
   background-color: white;
-  color: rgb(0, 34, 62);
+  color: rgb(0, 64, 117);
   width: 800rem;
   padding: 30rem;
   border-radius: 5rem;
@@ -55,8 +55,32 @@ h4 {
 }
 
 li {
-  border: 1rem solid rgb(0, 34, 62);
+  border: 2rem solid rgb(231, 231, 231);
+  border-radius: 3rem;
   width: 100%;
   margin-bottom: 30rem;
-  padding: 10rem 20rem 10rem 20rem;
+  padding: 12rem 22rem 12rem 22rem;
+  box-shadow: 4rem 4rem 6rem rgb(207, 207, 207);
+}
+
+.info-btn {
+  background-color: rgb(0, 64, 117);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-weight: 300;
+  padding: 8rem 8rem 5rem 8rem;
+  cursor: pointer;
+}
+
+.size-5 {
+  color: white;
+  width: 18rem;
+}
+
+p {
+  font-size: 15rem;
+  padding-top: 15rem;
+  padding-bottom: 10rem;
+  color: rgb(151, 151, 151);
 }
