@@ -4,11 +4,7 @@ import "./index.css";
 
 function App() {
   const [questions] = useState(questionsData);
-  const [openInfo, setOpenInfo] = useState({});
-
-  const toggleInfo = (id) => {
-    setOpenInfo((prev) => ({ ...prev, [id]: !prev[id] }));
-  };
+  const [isOpen, singleQuestion] = useState(false);
 
   return (
     <section className="list">
@@ -20,9 +16,11 @@ function App() {
               <h4>{question.title}</h4>
               <button
                 className="info-btn"
-                onClick={() => toggleInfo(question.id)}
+                onClick={() =>
+                  singleQuestion(isOpen === question.id ? true : question.id)
+                }
               >
-                {openInfo[question.id] ? (
+                {isOpen === question.id ? (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
@@ -47,7 +45,7 @@ function App() {
                 )}
               </button>
             </div>
-            {openInfo[question.id] && <p>{question.info}</p>}
+            {isOpen === question.id && <p>{question.info}</p>}
           </li>
         ))}
       </ul>
