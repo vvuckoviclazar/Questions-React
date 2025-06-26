@@ -1,52 +1,25 @@
 import { useState } from "react";
 import questionsData from "./data";
 import "./index.css";
+import SingleQuestion from "./SingleQuestion";
 
 function App() {
   const [questions] = useState(questionsData);
-  const [isOpen, singleQuestion] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <section className="list">
       <h1>Questions</h1>
       <ul className="questions-list">
         {questions.map((question) => (
-          <li key={question.id}>
-            <div className="question-div">
-              <h4>{question.title}</h4>
-              <button
-                className="info-btn"
-                onClick={() =>
-                  singleQuestion(isOpen === question.id ? true : question.id)
-                }
-              >
-                {isOpen === question.id ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    className="size-5"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M4 10a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H4.75A.75.75 0 0 1 4 10Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    className="size-5"
-                  >
-                    <path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z" />
-                  </svg>
-                )}
-              </button>
-            </div>
-            {isOpen === question.id && <p>{question.info}</p>}
-          </li>
+          <SingleQuestion
+            key={question.id}
+            question={question}
+            isOpen={isOpen === question.id}
+            toggle={() =>
+              setIsOpen(isOpen === question.id ? false : question.id)
+            }
+          />
         ))}
       </ul>
     </section>
