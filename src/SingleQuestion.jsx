@@ -1,11 +1,13 @@
-import React from "react";
+import { useState } from "react";
 
-export default function SingleQuestion({ question, isOpen, toggle }) {
+export default function SingleQuestion({ question }) {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <li>
       <div className="question-div">
         <h4>{question.title}</h4>
-        <button className="info-btn" onClick={toggle}>
+        <button className="info-btn" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
